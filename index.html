@@ -1,78 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bichota Sazón | Empanadas y Sabor Colombiano</title>
-  <meta name="description" content="Bichota Sazón - Empanadas recién hechas y comida colombiana con sazón auténtica. Pedidos rápidos por WhatsApp.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bichota Sazón</title>
+
+<style>
+:root{
+  --amarillo:#f6c400;
+  --azul:#1f4bd8;
+  --rojo:#c4161c;
+  --negro:#0f0f0f;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--negro);
+  color:white;
+}
+
+header{
+  background:var(--amarillo);
+  text-align:center;
+  padding:30px;
+}
+
+.menu summary{
+  background:var(--rojo);
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  margin-top:12px;
+}
+
+.product{
+  background:white;
+  color:black;
+  border-radius:12px;
+  padding:12px;
+  margin:10px;
+  animation:fadeUp .6s ease forwards;
+}
+
+.qty{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.qty button{
+  background:var(--azul);
+  color:white;
+  border:none;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  font-size:18px;
+}
+
+.cart{
+  background:#111;
+  margin:20px;
+  padding:20px;
+  border-radius:16px;
+}
+
+.button{
+  background:#25d366;
+  border:none;
+  padding:15px;
+  width:100%;
+  border-radius:40px;
+  font-weight:bold;
+  animation:pulse 2s infinite;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}
+  70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Bichota Sazón</h1>
-    <p>Empanadas recién hechas y sabor colombiano que se siente</p>
-  </header>
+<header>
+  <h1>Bichota Sazón</h1>
+  <p>Sabor colombiano que se siente 🇨🇴</p>
+</header>
 
-  <!-- PROMO -->
-  <section class="promo">
-    <h2>🔥 Conoce nuestra promo 🔥</h2>
-    <p>Empanadas recién hechas, crujientes y llenas de sabor</p>
-    <div class="price">🥟 Desde $2.000</div>
-    <p>Horario: 12:00 m – 10:00 pm</p>
-  </section>
+<section class="menu">
 
-  <!-- MENÚ -->
-  <section class="menu">
-    <h2>📋 Nuestro Menú</h2>
-    <ul>
-      <li>🥟 Empanadas</li>
-      <li>🍔 Hamburguesas</li>
-      <li>🌮 Tacos</li>
-      <li>🌯 Burritos</li>
-      <li>🍟 Salchipapas</li>
-      <li>🫓 Arepas</li>
-      <li>🌽 Mazorcada</li>
-      <li>🥤 Jugos naturales</li>
-    </ul>
-  </section>
+<details open>
+<summary>🥟 Empanadas</summary>
 
-  <!-- PEDIDOS -->
-  <section>
-    <h2>📲 Pide ahora</h2>
-    <div class="order-box">
-      <input type="text" id="nombre" placeholder="Tu nombre">
-      <textarea id="pedido" rows="4" placeholder="Escribe tu pedido"></textarea>
-      <button class="button" onclick="enviarWhatsApp()">Enviar pedido por WhatsApp</button>
-    </div>
-  </section>
+<div class="product">
+  Empanada Pollo $3.99
+  <div class="qty">
+    <button onclick="qty('Empanada Pollo',3.99,-1)">−</button>
+    <span id="Empanada Pollo">0</span>
+    <button onclick="qty('Empanada Pollo',3.99,1)">+</button>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>📞 Pedidos por WhatsApp: +1 313 889 2616</p>
-    <p>© 2026 Bichota Sazón</p>
-  </footer>
+</details>
+</section>
 
-  <!-- SCRIPT WHATSAPP -->
-  <script>
-    function enviarWhatsApp() {
-      const nombre = document.getElementById("nombre").value;
-      const pedido = document.getElementById("pedido").value;
+<section class="cart">
+<h3>🛒 Tu Pedido</h3>
+<ul id="cart"></ul>
+<p>Total: $<span id="total">0.00</span></p>
+<button class="button" onclick="send()">Pedir por WhatsApp</button>
+</section>
 
-      if (!nombre || !pedido) {
-        alert("Por favor completa tu nombre y pedido");
-        return;
-      }
+<script>
+let cart={};
 
-      const mensaje = `Hola, soy ${nombre}. Quiero pedir: ${pedido}`;
-      const telefono = "13138892616";
-      const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+function qty(n,p,c){
+ cart[n]=cart[n]||{q:0,p:p};
+ cart[n].q=Math.max(0,cart[n].q+c);
+ document.getElementById(n).textContent=cart[n].q;
+ render();
+}
 
-      window.open(url, "_blank");
-    }
-  </script>
+function render(){
+ let l=document.getElementById("cart");
+ let t=0;
+ l.innerHTML="";
+ for(let i in cart){
+  if(cart[i].q>0){
+   l.innerHTML+=`<li>${cart[i].q} x ${i}</li>`;
+   t+=cart[i].q*cart[i].p;
+  }
+ }
+ document.getElementById("total").textContent=t.toFixed(2);
+}
+
+function send(){
+ let m="Hola, quiero hacer este pedido:%0A";
+ for(let i in cart){
+  if(cart[i].q>0)m+=`• ${cart[i].q} x ${i}%0A`;
+ }
+ window.open(`https://wa.me/13138892616?text=${m}`);
+}
+</script>
 
 </body>
 </html>
