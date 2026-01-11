@@ -191,91 +191,161 @@ body{
 </header>
 
 <section class="cliente">
-  <input id="nombre" placeholder="👤 Tu nombre">
-  <input id="direccion" placeholder="📍 Dirección o punto de entrega">
+  <input id="nombre" placeholder="Tu nombre">
+  <input id="direccion" placeholder="Dirección o punto de entrega">
 </section>
 
 <section class="menu">
 
-<!-- EMPANADAS -->
 <details open>
   <summary>🥟 Empanadas</summary>
 
   <div class="product">
-    <img src="empanada.jpg" alt="Empanada colombiana">
-    <div class="product-content">
-      <h3>Empanada de Pollo</h3>
-      <p>Dorada y crujiente, rellena con pollo jugoso, arroz y queso.</p>
-
-      <div class="product-footer">
-        <span class="price">$3.99</span>
-        <div class="qty">
-          <button onclick="qty('Empanada Pollo',3.99,-1)">−</button>
-          <span id="Empanada Pollo">0</span>
-          <button onclick="qty('Empanada Pollo',3.99,1)">+</button>
-        </div>
-      </div>
+    Empanada Pollo, Arroz y Queso <strong>$3.99</strong>
+    <div class="qty">
+      <button onclick="qty('Empanada Pollo',3.99,-1)">−</button>
+      <span id="Empanada Pollo">0</span>
+      <button onclick="qty('Empanada Pollo',3.99,1)">+</button>
     </div>
   </div>
 
   <div class="product">
-    <img src="empanada-carne.jpg" alt="Empanada de carne">
-    <div class="product-content">
-      <h3>Empanada de Carne</h3>
-      <p>Carne sazonada al estilo tradicional colombiano con papa.</p>
-
-      <div class="product-footer">
-        <span class="price">$3.99</span>
-        <div class="qty">
-          <button onclick="qty('Empanada Carne',3.99,-1)">−</button>
-          <span id="Empanada Carne">0</span>
-          <button onclick="qty('Empanada Carne',3.99,1)">+</button>
-        </div>
-      </div>
+    Empanada Carne y Papa <strong>$3.99</strong>
+    <div class="qty">
+      <button onclick="qty('Empanada Carne',3.99,-1)">−</button>
+      <span id="Empanada Carne">0</span>
+      <button onclick="qty('Empanada Carne',3.99,1)">+</button>
     </div>
   </div>
 </details>
 
 <!-- PLATOS FUERTES -->
-<details>
+<details open>
   <summary>🥘 Platos Fuertes</summary>
 
   <div class="product">
-    <img src="picada.jpg" alt="Picada colombiana">
-    <div class="product-content">
-      <h3>Picada Pequeña</h3>
-      <p>Selección de carnes, chicharrón crocante y acompañamientos.</p>
-
-      <div class="product-footer">
-        <span class="price">$30</span>
-        <div class="qty">
-          <button onclick="qty('Picada Pequeña',30,-1)">−</button>
-          <span id="Picada Pequeña">0</span>
-          <button onclick="qty('Picada Pequeña',30,1)">+</button>
-        </div>
-      </div>
+    Picada Pequeña <strong>$30</strong>
+    <div class="qty">
+      <button onclick="qty('Picada Pequeña',30,-1)">−</button>
+      <span id="Picada Pequeña">0</span>
+      <button onclick="qty('Picada Pequeña',30,1)">+</button>
     </div>
   </div>
 
   <div class="product">
-    <img src="bandeja-paisa.jpg" alt="Bandeja paisa">
-    <div class="product-content">
-      <h3>Bandeja Paisa</h3>
-      <p>El plato insignia de Colombia, abundante y lleno de tradición.</p>
+    Picada Grande <strong>$50</strong>
+    <div class="qty">
+      <button onclick="qty('Picada Grande',50,-1)">−</button>
+      <span id="Picada Grande">0</span>
+      <button onclick="qty('Picada Grande',50,1)">+</button>
+    </div>
+  </div>
 
-      <div class="product-footer">
-        <span class="price">$14.99</span>
-        <div class="qty">
-          <button onclick="qty('Bandeja Paisa',14.99,-1)">−</button>
-          <span id="Bandeja Paisa">0</span>
-          <button onclick="qty('Bandeja Paisa',14.99,1)">+</button>
-        </div>
-      </div>
+  <div class="product">
+    Bandeja Paisa <strong>$14.99</strong>
+    <div class="qty">
+      <button onclick="qty('Bandeja Paisa',14.99,-1)">−</button>
+      <span id="Bandeja Paisa">0</span>
+      <button onclick="qty('Bandeja Paisa',14.99,1)">+</button>
+    </div>
+  </div>
+
+  <div class="product">
+    Bandeja con Pollo <strong>$12</strong>
+    <div class="qty">
+      <button onclick="qty('Bandeja con Pollo',12,-1)">−</button>
+      <span id="Bandeja con Pollo">0</span>
+      <button onclick="qty('Bandeja con Pollo',12,1)">+</button>
+    </div>
+  </div>
+
+  <div class="product">
+    Costillas de Cerdo BBQ <strong>$15</strong>
+    <div class="qty">
+      <button onclick="qty('Costillas de Cerdo BBQ',15,-1)">−</button>
+      <span id="Costillas de Cerdo BBQ">0</span>
+      <button onclick="qty('Costillas de Cerdo BBQ',15,1)">+</button>
+    </div>
+  </div>
+
+  <div class="product">
+    Sancocho <strong>$15</strong>
+    <div class="qty">
+      <button onclick="qty('Sancocho',15,-1)">−</button>
+      <span id="Sancocho">0</span>
+      <button onclick="qty('Sancocho',15,1)">+</button>
+    </div>
+  </div>
+</details>
+
+<!-- SANDWICHES Y CHUZOS -->
+<details>
+  <summary>🌭 Sandwiches y Chuzos</summary>
+
+  <div class="product">
+    Chuzopan <strong>$10</strong>
+    <div class="qty">
+      <button onclick="qty('Chuzopan',10,-1)">−</button>
+      <span id="Chuzopan">0</span>
+      <button onclick="qty('Chuzopan',10,1)">+</button>
+    </div>
+  </div>
+</details>
+
+<!-- ARROCES -->
+<details>
+  <summary>🍚 Arroces Especiales</summary>
+
+  <div class="product">
+    Arroz Oriental <strong>$12</strong>
+    <div class="qty">
+      <button onclick="qty('Arroz Oriental',12,-1)">−</button>
+      <span id="Arroz Oriental">0</span>
+      <button onclick="qty('Arroz Oriental',12,1)">+</button>
+    </div>
+  </div>
+
+  <div class="product">
+    Arroz Paisa <strong>$12</strong>
+    <div class="qty">
+      <button onclick="qty('Arroz Paisa',12,-1)">−</button>
+      <span id="Arroz Paisa">0</span>
+      <button onclick="qty('Arroz Paisa',12,1)">+</button>
+    </div>
+  </div>
+</details>
+
+<!-- PATACONES Y PAPAS -->
+<details>
+  <summary>🥔 Patacones y Papas</summary>
+
+  <div class="product">Carne Desmechada y Queso <strong>$5</strong>
+    <div class="qty">
+      <button onclick="qty('Carne Desmechada y Queso',5,-1)">−</button>
+      <span id="Carne Desmechada y Queso">0</span>
+      <button onclick="qty('Carne Desmechada y Queso',5,1)">+</button>
+    </div>
+  </div>
+
+  <div class="product">Pollo y Queso <strong>$5</strong>
+    <div class="qty">
+      <button onclick="qty('Pollo y Queso',5,-1)">−</button>
+      <span id="Pollo y Queso">0</span>
+      <button onclick="qty('Pollo y Queso',5,1)">+</button>
+    </div>
+  </div>
+
+  <div class="product">Queso <strong>$3.99</strong>
+    <div class="qty">
+      <button onclick="qty('Queso',3.99,-1)">−</button>
+      <span id="Queso">0</span>
+      <button onclick="qty('Queso',3.99,1)">+</button>
     </div>
   </div>
 </details>
 
 </section>
+
 
 <section class="cart">
   <h3>🛒 Tu Pedido</h3>
@@ -283,8 +353,6 @@ body{
   <p class="total">Total: $<span id="total">0.00</span></p>
   <button class="button" onclick="enviar()">Enviar pedido por WhatsApp</button>
 </section>
-
-</body>
 
 <script>
 let carrito={};
@@ -337,5 +405,4 @@ function enviar(){
 
 </body>
 </html>
-
 
