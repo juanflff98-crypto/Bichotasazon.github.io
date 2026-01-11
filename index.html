@@ -1,129 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bichota Sazón | Empanadas recién hechas</title>
-  <meta name="description" content="Bichota Sazón – Sabor colombiano que se siente. Pedidos por WhatsApp.">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
-      color: #ffffff;
-    }
-    header {
-      background: linear-gradient(135deg, #ff0033, #ff8c00);
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.4rem;
-    }
-    .slogan {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
-    section {
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .promo h2 {
-      color: #ffcc00;
-      margin-bottom: 10px;
-    }
-    .price {
-      font-size: 2rem;
-      color: #00ff99;
-      margin: 10px 0;
-    }
-    img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 12px;
-      margin: 15px 0;
-    }
-    .menu {
-      background: #0b0b0b;
-    }
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .menu li {
-      padding: 8px 0;
-      border-bottom: 1px solid #222;
-    }
-    .order-box {
-      background: #111;
-      border-radius: 12px;
-      padding: 20px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-    .button {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      background: #25d366;
-      color: #000;
-      font-weight: bold;
-      border-radius: 40px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      margin-top: 15px;
-    }
-    footer {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-  </style>
-
-  <script>
-    function enviarPedido() {
-      const nombre = document.getElementById("nombre").value;
-      const pedido = document.getElementById("pedido").value;
-
-      if (nombre === "" || pedido === "") {
-        alert("Por favor escribe tu nombre y tu pedido");
-        return;
-      }
-
-      const mensaje = `Hola, soy ${nombre}. Quiero hacer el siguiente pedido en Bichota Sazón:%0A${pedido}`;
-      const url = `https://wa.me/13138892616?text=${mensaje}`;
-      window.open(url, "_blank");
-    }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú - Bichota Sazón</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
-<header>
-  <h1>BICHOTA SAZÓN</h1>
-  <div class="slogan">Sabor colombiano que se siente</div>
+<header class="header">
+  <div class="container">
+    <h1 class="logo">🍽️ Bichota Sazón</h1>
+    <p class="subtitle">¡El mejor sabor en cada bocado!</p>
+  </div>
 </header>
 
-<section class="promo">
-  <h2>CONOCE NUESTRA PROMO</h2>
-  <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" alt="Empanadas">
-  <p><strong>Empanadas recién hechas</strong></p>
-  <p>Carne y papa · Pollo, arroz y queso</p>
-  <div class="price">$3.99</div>
+<section class="menu-section container">
+  <h2>Entradas</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="images/empanada1.jpg" alt="Empanada de Carne">
+      <h3>Empanada de Carne</h3>
+      <p class="price">$6.000</p>
+      <p>Deliciosa empanada de carne con salsa especial.</p>
+    </div>
+    <div class="menu-item">
+      <img src="images/empanada2.jpg" alt="Empanada de Pollo">
+      <h3>Empanada de Pollo</h3>
+      <p class="price">$6.000</p>
+      <p>Sabor tradicional con relleno jugoso de pollo.</p>
+    </div>
+    <!-- Más ítems -->
+  </div>
 </section>
 
-<sec
+<section class="menu-section container">
+  <h2>Bebidas</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="images/bebida1.jpg" alt="Refresco">
+      <h3>Refresco</h3>
+      <p class="price">$3.000</p>
+      <p>Refresco frío para acompañar tu menú.</p>
+    </div>
+    <!-- Más bebidas -->
+  </div>
+</section>
+
+<footer class="footer container">
+  <p>📍 Ubicación: Calle Sabor #45</p>
+  <p>📞 Contacto: 312 555 2424</p>
+  <p>© 2026 Bichota Sazón</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
