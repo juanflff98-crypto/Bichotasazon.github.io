@@ -20,8 +20,10 @@ body {
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
+  width: 160px;        /* tamaño normal */
+  max-width: 70%;
+  margin-bottom: 12px;
+  animation: pop 0.8s ease forwards;
 }
 
 .subtitle {
@@ -117,3 +119,4 @@ body {
   font-size: 0.9rem;
   display: inline-block;
 }
+
