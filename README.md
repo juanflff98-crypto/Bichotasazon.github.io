@@ -17,7 +17,3 @@ Esta web está diseñada como una **landing page simple, rápida y optimizada pa
 - 💯 100% HTML, CSS y JavaScript puro (sin frameworks)
 - 🆓 Totalmente gratis y fácil de alojar
 
----
-
-## 📂 Estructura del proyecto
-
