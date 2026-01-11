@@ -99,7 +99,7 @@ body {
   padding: 40px 20px;
 }
 
-  .logo {
+.logo {
   width: 160px;        /* tamaño normal */
   max-width: 70%;
   margin-bottom: 12px;
@@ -120,5 +120,6 @@ body {
   font-size: 0.9rem;
   display: inline-block;
 }
+
 
 
