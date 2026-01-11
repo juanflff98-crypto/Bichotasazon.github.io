@@ -1,125 +1,159 @@
-/* ===== Reset básico ===== */
+:root {
+  --amarillo: #f4c430;
+  --negro: #111;
+  --gris: #666;
+  --blanco: #fff;
+  --fondo: #fafafa;
+}
+
+/* RESET BÁSICO */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #fff;
-  color: #333;
-}
-
-/* ===== Header ===== */
-.header {
-  background: #e63946;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 0;
-}
-
-.logo {
-  width: 160px;        /* tamaño normal */
-  max-width: 70%;
-  margin-bottom: 12px;
-  animation: pop 0.8s ease forwards;
-}
-
-.subtitle {
-  margin-top: .3rem;
-  font-size: 1rem;
-  opacity: .9;
-}
-
-/* ===== Contenedores ===== */
-.container {
-  width: 90%;
-  max-width: 1000px;
+  background: var(--fondo);
+  color: var(--negro);
+  max-width: 420px;
   margin: auto;
 }
 
-/* ===== Secciones de menú ===== */
-.menu-section {
-  margin-top: 2rem;
-}
-
-.menu-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #e63946;
-  padding-bottom: .5rem;
-}
-
-.menu-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-}
-
-.menu-item {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  transition: transform .2s ease;
-}
-
-.menu-item:hover {
-  transform: scale(1.03);
-}
-
-.menu-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.menu-item h3 {
-  margin-top: .5rem;
-  font-size: 1.2rem;
-}
-
-.price {
-  font-weight: bold;
-  color: #e63946;
-  margin-top: .4rem;
-}
-
-/* ===== Footer ===== */
-.footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem 0;
-  font-size: .9rem;
-  border-top: 1px solid #eee;
-}
-
+/* HEADER */
 .hero {
-  background: var(--amarillo);
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+              url("hero.jpg") center/cover no-repeat;
+  color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .logo {
-  width: 160px;        /* tamaño normal */
-  max-width: 70%;
-  margin-bottom: 12px;
-  animation: pop 0.8s ease forwards;
+  width: 150px;
+  margin-bottom: 10px;
 }
 
 .slogan {
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 6px;
 }
 
 .horario {
-  background: black;
-  color: white;
-  padding: 6px 14px;
+  background: var(--amarillo);
+  color: black;
+  padding: 6px 16px;
   border-radius: 20px;
-  font-size: 0.9rem;
-  display: inline-block;
+  font-size: .9rem;
 }
 
+/* SECCIÓN MENÚ */
+.menu {
+  padding: 20px;
+}
 
+/* CATEGORÍAS */
+details {
+  margin-bottom: 22px;
+}
 
+summary {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--amarillo);
+  cursor: pointer;
+}
+
+/* TARJETA PREMIUM */
+.product {
+  background: var(--blanco);
+  border-radius: 18px;
+  margin-top: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  animation: fadeUp .6s ease;
+}
+
+/* IMAGEN DEL PRODUCTO */
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* CONTENIDO */
+.product-content {
+  padding: 14px;
+}
+
+.product h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.product p {
+  font-size: .9rem;
+  color: var(--gris);
+  margin-bottom: 10px;
+}
+
+/* PRECIO + CONTADOR */
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.qty {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.qty button {
+  background: var(--amarillo);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  width: 90%;
+  margin: 20px auto;
+  display: block;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: .8rem;
+  color: var(--gris);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
